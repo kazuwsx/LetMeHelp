@@ -1,0 +1,20 @@
+<%= render 'request', request: @request %>
+<button type="button" class="m-2 btn bg-primary btn-lg text-align-center">
+  <% if @request.user_id == current_user.id%>
+    <% if @request.accepted == false %>
+      <%= simple_format 'まだ承認されていません。', class: "text-white"%>
+    <% else %>
+      <%= link_to 'チャットを行う', chats_path(id: @request.id), class: "text-white" %>
+    <% end %>
+  <% else%>
+    <% if @request.accepted == false %>
+      <%= link_to '承認する', approve_index_url(id: @request.id), class: "text-white" %>
+    <% else %>
+      <% if @request.accept_user_id == current_user.id %>
+        <%= link_to 'チャットを行う', chats_path(id: @request.id), class: "text-white" %>
+      <% else%>
+        <%= simple_format '他のユーザーが承認したリクエストです。', class: "text-white"%>
+      <% end%>
+    <% end %>
+  <% end %>
+</button>

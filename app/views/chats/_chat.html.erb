@@ -1,0 +1,13 @@
+<% side = c.user_id == current_user.id ? "right" : "left" %>
+<div class="p-2 w-100">
+  <div class='text-<%= side %>' >
+    <% if c.user.profile.present? %>
+      <%= image_tag c.user.profile.image.url, size: '70', class: "float-#{side} mt-3" %></br>
+    <% end %>
+    <div class="border border-info rounded p-2 d-inline-block">  
+      <div class='h4 font-weight-normal'>
+        <%= c.comment %>
+      </div>
+    </div>
+  </div>
+</div>

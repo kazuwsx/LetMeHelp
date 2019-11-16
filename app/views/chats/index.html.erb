@@ -1,0 +1,11 @@
+<%= form_with url: chats_path(request_id: @request.id), method: :post do |f| %>
+  <%= f.text_field :comment, placeholder: "コメント", class: 'comment_form' %>
+  <%= f.submit %>
+<% end %>
+<%= link_to "訪問サポートを行う" %>
+<h2>All Post</h2>
+<div class="chat_wrapper">
+  <% @chats.reverse_each do |c| %>
+    <%= render 'chats/chat', c: c %>
+  <% end %>
+</div> 
