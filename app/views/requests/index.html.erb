@@ -1,7 +1,3 @@
-<div  class="card p-2 m-2">
-<%= link_to "新規投稿", new_request_path, class: 'mx-auto'%>  
-</div>
 <% @requests.each do |request| %>
-  <%= render 'request', request: request%>
+  <%= render 'layouts/request', request: request%>
 <% end %>
-

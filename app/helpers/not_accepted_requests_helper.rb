@@ -1,0 +1,2 @@
+module NotAcceptedRequestsHelper
+end

@@ -1,12 +1,12 @@
 <div class="card p-2 m-2">
   <div class="contents overflow-hidden">
     <div class="float-left p-3 text-center">
-      <% if request.user.profile.present? %>
+      <% if request.user.image.present? %>
         <div >
-          <%= image_tag request.user.profile.image.url, size: '80x80', class: "rounded-circle"%></br>
+          <%= image_tag request.user.image.url, size: '80x80', class: "rounded-circle"%></br>
         </div>
       <% end %>
-      <%= request.user.name   %></br>
+      <%= request.user.name %></br>
         <nobr>
           <%= request.user.age %>
           <%= gender_determination(request.user.sex) %>
@@ -15,8 +15,12 @@
     <div class="mt-3">
       <div class="card-body overflow-hidden">
         <p class="title h3"><%= link_to "#{request.title}", request_path(request.id) %></p>                
-        <%= request.detail_information %>
+        <%= request.detail_information %><br>
+        <%= request.created_at.strftime("%Y-%m-%d %H:%M") %>
+        
       </div>
+      
     </div>
+    
   </div>
 </div>

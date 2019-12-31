@@ -1,4 +1,4 @@
-<%= render 'request', request: @request %>
+<%= render 'layouts/request', request: @request %>
 <button type="button" class="m-2 btn bg-primary btn-lg text-align-center">
   <% if @request.user_id == current_user.id%>
     <% if @request.accepted == false %>

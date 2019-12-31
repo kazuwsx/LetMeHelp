@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :chat
   has_many :request
   has_one :profile, dependent: :destroy 
+  mount_uploader :image, ImageUploader
 end

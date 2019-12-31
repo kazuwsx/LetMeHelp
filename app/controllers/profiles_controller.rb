@@ -1,10 +1,9 @@
 class ProfilesController < ApplicationController
   def update
-    p = Profile.find_by(user_id: current_user.id).blank? ? Profile.new : Profile.find_by(user_id: current_user.id)
-    p.image = profile_params[:image]
-    p.user_id = current_user.id
-    if p.save
-      flash[:success] = "画像の設定に成功しました。"
+    u = User.find_by(id: current_user.id)
+    u.image = profile_params[:image]
+    if u.save
+      flash[:notice] = "画像の設定に成功しました。"
     end
   end
   private

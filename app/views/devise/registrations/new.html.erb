@@ -39,6 +39,22 @@
     <%= f.radio_button :sex, false %>
   </div>
 
+  <div class="field">
+    <%= f.label :どちらかを選んでください %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"助けを必要とします。" %>
+    <%= f.radio_button :helper, true %>
+    <%= f.label :"人助けをしたいです。" %>
+    <%= f.radio_button :helper, false %>
+  </div>
+
+  <div class="field">
+      <%= f.label "画像をアップロード" %>
+  <%= f.file_field :image ,placeholder: 'aa'%>
+  </div>
+
 <% if flash[:success] %>
       <h2><%= flash[:success] %></h2>
 <% end %>

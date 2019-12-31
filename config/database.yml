@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
   database: LetMeHelp_production
   username: LetMeHelp
   password: <%= ENV['LETMEHELP_DATABASE_PASSWORD'] %>

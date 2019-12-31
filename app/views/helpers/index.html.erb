@@ -1,0 +1,13 @@
+<h1 class="text-center">支援者メニュー</h1>
+<div class="p-2">
+  <%= link_to "リクエスト一覧", requests_path, class: "btn btn-primary btn-lg w-100 m-1 p-4", style: "margin:auto" %>
+  <p class="lead text-center">現在投稿されているリクエストが閲覧できます。</p>
+</div>
+<div class="p-2">
+  <%= link_to "未承認のリクエスト一覧", not_accepted_requests_path, class: "btn btn-primary btn-lg w-100 m-1 p-4", style: "margin:auto" %>
+  <p class="lead text-center">現在投稿されている未承認のリクエストが閲覧できます。</p>
+</div>
+<div class="p-2">
+  <%= link_to "あなたの承認済みリクエスト一覧", accepted_requests_path, class: "btn btn-primary btn-lg w-100 m-1 p-4", style: "margin:auto" %>
+  <p class="lead text-center">あなたが承認したリクエストが閲覧できます。チャットで支援をしましょう。</p>
+</div>

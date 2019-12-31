@@ -1,0 +1,6 @@
+<% if @requests.count == 0 %>
+  <h1>投稿されたリクエストはありません。</h1>
+<% end %>
+<% @requests.each do |request| %>
+  <%= render 'layouts/request', request: request%>
+<% end %>

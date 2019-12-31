@@ -11,7 +11,7 @@ class RequestsController < ApplicationController
     r.accepted = false
     r.completed = false
     r.save!
-    redirect_to action: :index
+    redirect_to :requesters
   end
 
   def show
